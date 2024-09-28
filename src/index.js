@@ -26,6 +26,23 @@ app.post("/signin",async (req,res)=>{
     res.render("home")
 })
 
+app.post("/login",async (req,res)=>{
+    
+    try{
+        const check = await collection.findOne({name:req.body.name})
+        if(check.password===req.body.password){
+            res.render("home")
+        }
+        else{
+            res.send("Wrong password")
+        }
+    }
+    catch{
+        res.send("Wrong details")
+    }
+    
+})
+
 app.get("/signin",(req,res)=>{
     res.render("signin");
 })

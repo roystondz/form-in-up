@@ -1,0 +1,6 @@
+#to start mongoDB in terminal
+sudo mongod --dbpath=/Users/roy/data/db
+
+#also set up connection in mongoDB compass
+1. The name of the database
+2. The name of the collection
